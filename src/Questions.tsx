@@ -12,7 +12,7 @@ export function Questions(): JSX.Element {
             >
                 Basic Questions
             </Button>
-            {bQs ? <p>Basic Questions</p> : <p>Click a button</p>}
+            {bQs ? <p>Basic Questions</p> : <p></p>}
         </div>
     )
 }
