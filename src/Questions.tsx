@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
 export function Questions(): JSX.Element {
-    const [qType, setQType] = useState<Number>(0);
+    const [qType, setQType] = useState<Number>(0); //Used numbers because need to manage 3 states instead of 2
     return (
         <div>
             <Button
@@ -12,7 +12,7 @@ export function Questions(): JSX.Element {
             >
                 Basic Questions
             </Button>
-            {qType === 1 ? <p>Basic Questions</p> : <p></p>}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <Button
                 onClick={() =>
                     setQType(2)
@@ -20,7 +20,7 @@ export function Questions(): JSX.Element {
             >
                 Detailed Questions
             </Button>
-            {qType === 2 ? <p>Detailed Questions Questions</p> : <p></p>}
+            {qType === 1 ? qType === 2 ? <p>Detailed Questions</p> : <p>Basic Questions</p> : <p></p>}
         </div>
     )
 }
