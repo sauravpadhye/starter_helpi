@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import { Report } from "./NavToReport";
 
 export function Questions(): JSX.Element {
     const [qType, setQType] = useState<Number>(0); //Used numbers because need to manage 3 states instead of 2
@@ -209,7 +210,8 @@ export function Questions(): JSX.Element {
                 label="C"
                 value="C"
                 checked={optionB5 === "C"}
-                />
+                /><p>
+                <Report></Report></p>
             </p> : 
             <p>
                 <hr></hr>
@@ -357,7 +359,9 @@ export function Questions(): JSX.Element {
                 label="C"
                 value="C"
                 checked={optionD5 === "C"}
-                /></p>}
+                />
+                <p>
+                    <Report></Report></p></p>}
         </div>
     )
 }

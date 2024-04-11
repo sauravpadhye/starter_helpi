@@ -30,7 +30,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          CAREER SURVEVY PAGE
         </p>
         <p>
           Group Members: Saurav Padhye, Joseph Dougherty, Evan Gantert
