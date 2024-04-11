@@ -189,7 +189,153 @@ export function Questions(): JSX.Element {
                 checked={option5 === "C"}
                 />
             </p> : 
-            <p></p>}
+            <p>
+                <hr></hr>
+                <h3>Detailed Questions</h3>
+                Question 1
+                <Form.Check
+                type="radio"
+                name="options1"
+                onChange={updateOption1}
+                id="options1-check-A"
+                label="A"
+                value="A"
+                checked={option1 === "A"}
+                />
+                <Form.Check
+                type="radio"
+                name="options1"
+                onChange={updateOption1}
+                id="options1-check-B"
+                label="B"
+                value="B"
+                checked={option1 === "B"}
+                />
+                <Form.Check
+                type="radio"
+                name="options1"
+                onChange={updateOption1}
+                id="options1-check-C"
+                label="C"
+                value="C"
+                checked={option1 === "C"}
+                />
+                <br></br>
+                Question 2
+                <Form.Check
+                type="radio"
+                name="options2"
+                onChange={updateOption2}
+                id="options2-check-A"
+                label="A"
+                value="A"
+                checked={option2 === "A"}
+                />
+                <Form.Check
+                type="radio"
+                name="options2"
+                onChange={updateOption2}
+                id="options2-check-B"
+                label="B"
+                value="B"
+                checked={option2 === "B"}
+                />
+                <Form.Check
+                type="radio"
+                name="options2"
+                onChange={updateOption2}
+                id="options2-check-C"
+                label="C"
+                value="C"
+                checked={option2 === "C"}
+                />
+                <br></br>
+                Question 3
+                <Form.Check
+                type="radio"
+                name="options3"
+                onChange={updateOption3}
+                id="options3-check-A"
+                label="A"
+                value="A"
+                checked={option3 === "A"}
+                />
+                <Form.Check
+                type="radio"
+                name="options3"
+                onChange={updateOption3}
+                id="options3-check-B"
+                label="B"
+                value="B"
+                checked={option3 === "B"}
+                />
+                <Form.Check
+                type="radio"
+                name="options3"
+                onChange={updateOption3}
+                id="options3-check-C"
+                label="C"
+                value="C"
+                checked={option3 === "C"}
+                />
+                <br></br>
+                Question 4
+                <Form.Check
+                type="radio"
+                name="options4"
+                onChange={updateOption4}
+                id="options4-check-A"
+                label="A"
+                value="A"
+                checked={option4 === "A"}
+                />
+                <Form.Check
+                type="radio"
+                name="options4"
+                onChange={updateOption4}
+                id="options4-check-B"
+                label="B"
+                value="B"
+                checked={option4 === "B"}
+                />
+                <Form.Check
+                type="radio"
+                name="options4"
+                onChange={updateOption4}
+                id="options4-check-C"
+                label="C"
+                value="C"
+                checked={option4 === "C"}
+                />
+                <br></br>
+                Question 5
+                <Form.Check
+                type="radio"
+                name="options5"
+                onChange={updateOption5}
+                id="options5-check-A"
+                label="A"
+                value="A"
+                checked={option5 === "A"}
+                />
+                <Form.Check
+                type="radio"
+                name="options5"
+                onChange={updateOption5}
+                id="options5-check-B"
+                label="B"
+                value="B"
+                checked={option5 === "B"}
+                />
+                <Form.Check
+                type="radio"
+                name="options5"
+                onChange={updateOption5}
+                id="options5-check-C"
+                label="C"
+                value="C"
+                checked={option5 === "C"}
+                /></p>}
         </div>
     )
 }
