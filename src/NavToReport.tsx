@@ -5,6 +5,10 @@ import { Button } from "react-bootstrap";
 export function Report(): JSX.Element {
     const [isON, setStatus] = useState<boolean>(true);
 
+    function updateStatus(event: React.ChangeEvent<HTMLSelectElement>) {
+        setStatus(false);
+    }
+
     return <div>
         <Button onClick={() => setStatus(!isON)}
         >See Report of Results</Button>
