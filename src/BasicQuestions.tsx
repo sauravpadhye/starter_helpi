@@ -23,7 +23,6 @@ export function BasicQuestions(): JSX.Element {
         setOptionB5(event.target.value);
     }
     return <div>
-            <hr></hr>
                 <h3>Basic Questions</h3>
                 Question 1
                 <Form.Check

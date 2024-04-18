@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-//import { Questions } from "./Questions";
+import { BasicQuestions } from "./BasicQuestions";
+import { DetailedQuestions } from "./DetailedQuestions";
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -61,8 +62,10 @@ function App() {
       <Button onClick = {()=>setPageStatus("home")}>Home</Button>
       <Button onClick = {()=>setPageStatus("basic")}>Basic Questions</Button>
       <Button onClick = {()=>setPageStatus("detailed")}>Detailed Questions</Button>
-      <span>{pageStatus}</span>
       <hr></hr>
+      {pageStatus === "home" ? <p>hello</p>:null}
+      {pageStatus === "basic" ? <BasicQuestions></BasicQuestions>:null}
+      {pageStatus === "detailed" ? <DetailedQuestions></DetailedQuestions>:null}
     </div>
   );
 }
