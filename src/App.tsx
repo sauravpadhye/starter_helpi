@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-import { Questions } from "./Questions";
+import { BasicQuestions } from "./BasicQuestions";
+import { DetailedQuestions } from "./DetailedQuestions";
+import { Home } from "./Home";
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -25,9 +27,12 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
+  type pageOption = 'home' | 'basic' | 'detailed'
+  const [pageStatus, setPageStatus] = useState<pageOption>("home");
+
   return (
-    <div className="App">
-      <header className="App-header">
+    /*
+<header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           CAREER SURVEVY PAGE
@@ -44,15 +49,22 @@ function App() {
           Learn React
         </a>
       </header>
+    */
+    <div className="App">
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
         <br></br>
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
+      <p></p>
+      <Button style={{ marginRight: '20px' }} onClick = {()=>setPageStatus("home")}>Home</Button>
+      <Button style={{ marginLeft: '20px' }} onClick = {()=>setPageStatus("basic")}>Basic Questions</Button>
+      <Button style={{ marginLeft: '40px' }} onClick = {()=>setPageStatus("detailed")}>Detailed Questions</Button>
       <hr></hr>
-      Click a Button:
-      <Questions></Questions>
+      {pageStatus === "home" ? <Home></Home>:null}
+      {pageStatus === "basic" ? <BasicQuestions></BasicQuestions>:null}
+      {pageStatus === "detailed" ? <DetailedQuestions></DetailedQuestions>:null}
     </div>
   );
 }
