@@ -4,6 +4,7 @@ import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { BasicQuestions } from "./BasicQuestions";
 import { DetailedQuestions } from "./DetailedQuestions";
+import { Home } from "./Home";
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -56,14 +57,12 @@ function App() {
         <br></br>
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
-      <h1>CAREERY SURVEY QUIZ</h1>
-      <h5>Authors: Saurav Padhye, Joe Dougherty, Evan Gantert</h5>
-      Click a Button:
-      <Button onClick = {()=>setPageStatus("home")}>Home</Button>
-      <Button onClick = {()=>setPageStatus("basic")}>Basic Questions</Button>
-      <Button onClick = {()=>setPageStatus("detailed")}>Detailed Questions</Button>
+      <p></p>
+      <Button style={{ marginRight: '20px' }} onClick = {()=>setPageStatus("home")}>Home</Button>
+      <Button style={{ marginLeft: '20px' }} onClick = {()=>setPageStatus("basic")}>Basic Questions</Button>
+      <Button style={{ marginLeft: '40px' }} onClick = {()=>setPageStatus("detailed")}>Detailed Questions</Button>
       <hr></hr>
-      {pageStatus === "home" ? <p>hello</p>:null}
+      {pageStatus === "home" ? <Home></Home>:null}
       {pageStatus === "basic" ? <BasicQuestions></BasicQuestions>:null}
       {pageStatus === "detailed" ? <DetailedQuestions></DetailedQuestions>:null}
     </div>
