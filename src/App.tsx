@@ -58,9 +58,9 @@ function App() {
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
       <p></p>
-      <Button style={{ marginRight: '20px' }} onClick = {()=>setPageStatus("home")}>Home</Button>
-      <Button style={{ marginLeft: '20px' }} onClick = {()=>setPageStatus("basic")}>Basic Questions</Button>
-      <Button style={{ marginLeft: '40px' }} onClick = {()=>setPageStatus("detailed")}>Detailed Questions</Button>
+      <Button style={{ width:'150px',height:'50px',marginRight: '20px' }} onClick = {()=>setPageStatus("home")}>Home</Button>
+      <Button style={{ width:'150px',height:'50px',marginLeft: '20px' }} onClick = {()=>setPageStatus("basic")}>Basic Questions</Button>
+      <Button style={{ width:'150px',height:'50px',marginLeft: '40px' }} onClick = {()=>setPageStatus("detailed")}>Detailed Questions</Button>
       <hr></hr>
       {pageStatus === "home" ? <Home></Home>:null}
       {pageStatus === "basic" ? <BasicQuestions></BasicQuestions>:null}
