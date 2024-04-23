@@ -22,151 +22,263 @@ export function BasicQuestions(): JSX.Element {
     function updateOptionB5(event: React.ChangeEvent<HTMLInputElement>) {
         setOptionB5(event.target.value);
     }
+    const [optionB6, setOptionB6] = useState<string>("");
+    function updateOptionB6(event: React.ChangeEvent<HTMLInputElement>) {
+        setOptionB6(event.target.value);
+    }
+    const [optionB7, setOptionB7] = useState<string>("");
+    function updateOptionB7(event: React.ChangeEvent<HTMLInputElement>) {
+        setOptionB7(event.target.value);
+    }
     return <div>
                 <h3>Basic Questions</h3>
-                Question 1
+                1. What is your preferred work environment?
                 <Form.Check
                 type="radio"
                 name="options1"
                 onChange={updateOptionB1}
                 id="options1-check-A"
-                label="A"
-                value="A"
-                checked={optionB1 === "A"}
+                label="Office"
+                value="Office"
+                checked={optionB1 === "Office"}
                 />
                 <Form.Check
                 type="radio"
                 name="options1"
                 onChange={updateOptionB1}
                 id="options1-check-B"
-                label="B"
-                value="B"
-                checked={optionB1 === "B"}
+                label="Field/Plant"
+                value="Field/Plant"
+                checked={optionB1 === "Field/Plant"}
                 />
                 <Form.Check
                 type="radio"
                 name="options1"
                 onChange={updateOptionB1}
                 id="options1-check-C"
-                label="C"
-                value="C"
-                checked={optionB1 === "C"}
+                label="Remote/Work from Home"
+                value="Remote/Work from Home"
+                checked={optionB1 === "Remote/Work from Home"}
+                />
+                <Form.Check
+                type="radio"
+                name="options1"
+                onChange={updateOptionB1}
+                id="options1-check-D"
+                label="Hybrid"
+                value="Hybrid"
+                checked={optionB1 === "Hybrid"}
                 />
                 <br></br>
-                Question 2
+                2. Which of these subjects is your favorite?
                 <Form.Check
                 type="radio"
                 name="options2"
                 onChange={updateOptionB2}
                 id="options2-check-A"
-                label="A"
-                value="A"
-                checked={optionB2 === "A"}
+                label="Chemistry"
+                value="Chemistry"
+                checked={optionB2 === "Chemistry"}
                 />
                 <Form.Check
                 type="radio"
                 name="options2"
                 onChange={updateOptionB2}
                 id="options2-check-B"
-                label="B"
-                value="B"
-                checked={optionB2 === "B"}
+                label="Art"
+                value="Art"
+                checked={optionB2 === "Art"}
                 />
                 <Form.Check
                 type="radio"
                 name="options2"
                 onChange={updateOptionB2}
                 id="options2-check-C"
-                label="C"
-                value="C"
-                checked={optionB2 === "C"}
+                label="History"
+                value="History"
+                checked={optionB2 === "History"}
+                />
+                <Form.Check
+                type="radio"
+                name="options2"
+                onChange={updateOptionB2}
+                id="options2-check-D"
+                label="Math"
+                value="Math"
+                checked={optionB2 === "Math"}
                 />
                 <br></br>
-                Question 3
+                3. How comfortable are you working with computers/technology?
                 <Form.Check
                 type="radio"
                 name="options3"
                 onChange={updateOptionB3}
                 id="options3-check-A"
-                label="A"
-                value="A"
-                checked={optionB3 === "A"}
+                label="Very comfortable"
+                value="Very comfortable"
+                checked={optionB3 === "Very comfortable"}
                 />
                 <Form.Check
                 type="radio"
                 name="options3"
                 onChange={updateOptionB3}
                 id="options3-check-B"
-                label="B"
-                value="B"
-                checked={optionB3 === "B"}
+                label="Fairly comfortable"
+                value="Fairly comfortable"
+                checked={optionB3 === "Fairly comfortable"}
                 />
                 <Form.Check
                 type="radio"
                 name="options3"
                 onChange={updateOptionB3}
                 id="options3-check-C"
-                label="C"
-                value="C"
-                checked={optionB3 === "C"}
+                label="Fairly uncomfortable"
+                value="Fairly uncomfortable"
+                checked={optionB3 === "Fairly uncomfortable"}
+                />
+                <Form.Check
+                type="radio"
+                name="options3"
+                onChange={updateOptionB3}
+                id="options3-check-D"
+                label="Very uncomfortable"
+                value="Very uncomfortable"
+                checked={optionB3 === "Very uncomfortable"}
+                />
+                <Form.Check
+                type="radio"
+                name="options3"
+                onChange={updateOptionB3}
+                id="options3-check-E"
+                label="Unsure/Indifferent"
+                value="Unsure/Indifferent"
+                checked={optionB3 === "Unsure/Indifferent"}
                 />
                 <br></br>
-                Question 4
+                4. Are you open to having to travel for work?
                 <Form.Check
                 type="radio"
                 name="options4"
                 onChange={updateOptionB4}
                 id="options4-check-A"
-                label="A"
-                value="A"
-                checked={optionB4 === "A"}
+                label="Open"
+                value="Open"
+                checked={optionB4 === "Open"}
                 />
                 <Form.Check
                 type="radio"
                 name="options4"
                 onChange={updateOptionB4}
                 id="options4-check-B"
-                label="B"
-                value="B"
-                checked={optionB4 === "B"}
+                label="Not Open"
+                value="Not Open"
+                checked={optionB4 === "Not Open"}
                 />
                 <Form.Check
                 type="radio"
                 name="options4"
                 onChange={updateOptionB4}
                 id="options4-check-C"
-                label="C"
-                value="C"
-                checked={optionB4 === "C"}
+                label="Indifferent"
+                value="Indifferent"
+                checked={optionB4 === "Indifferent"}
                 />
                 <br></br>
-                Question 5
+                5. Which of these would you say is your strongest character trait?
                 <Form.Check
                 type="radio"
                 name="options5"
                 onChange={updateOptionB5}
                 id="options5-check-A"
-                label="A"
-                value="A"
-                checked={optionB5 === "A"}
+                label="Interacting with people"
+                value="Interacting with people"
+                checked={optionB5 === "Interacting with people"}
                 />
                 <Form.Check
                 type="radio"
                 name="options5"
                 onChange={updateOptionB5}
                 id="options5-check-B"
-                label="B"
-                value="B"
-                checked={optionB5 === "B"}
+                label="Problem solving"
+                value="Problem solving"
+                checked={optionB5 === "Problem solving"}
                 />
                 <Form.Check
                 type="radio"
                 name="options5"
                 onChange={updateOptionB5}
                 id="options5-check-C"
-                label="C"
-                value="C"
-                checked={optionB5 === "C"}
-                /><p></p>
+                label="Creative expression"
+                value="Creative expression"
+                checked={optionB5 === "Creative expression"}
+                />
+                <br></br>
+                6. What kind of area do you want to live in?
+                <Form.Check
+                type="radio"
+                name="options6"
+                onChange={updateOptionB6}
+                id="options6-check-A"
+                label="Rural"
+                value="Rural"
+                checked={optionB6 === "Rural"}
+                />
+                <Form.Check
+                type="radio"
+                name="options6"
+                onChange={updateOptionB6}
+                id="options6-check-B"
+                label="Suburban"
+                value="Suburban"
+                checked={optionB6 === "Suburban"}
+                />
+                <Form.Check
+                type="radio"
+                name="options6"
+                onChange={updateOptionB6}
+                id="options6-check-C"
+                label="Urban"
+                value="Urban"
+                checked={optionB6 === "Urban"}
+                />
+                <br></br>
+                7. How important is salary to you?
+                <Form.Check
+                type="radio"
+                name="options7"
+                onChange={updateOptionB7}
+                id="options7-check-A"
+                label="Very important"
+                value="Very important"
+                checked={optionB7 === "Very important"}
+                />
+                <Form.Check
+                type="radio"
+                name="options7"
+                onChange={updateOptionB7}
+                id="options7-check-B"
+                label="Rather important"
+                value="Rather important"
+                checked={optionB7 === "Rather important"}
+                />
+                <Form.Check
+                type="radio"
+                name="options7"
+                onChange={updateOptionB7}
+                id="options7-check-C"
+                label="Not very important"
+                value="Not very important"
+                checked={optionB7 === "Not very important"}
+                />
+                <Form.Check
+                type="radio"
+                name="options7"
+                onChange={updateOptionB7}
+                id="options7-check-D"
+                label="Not important at all"
+                value="Not important at all"
+                checked={optionB7 === "Not important at all"}
+                />
+                <p></p>
     </div>
 }
