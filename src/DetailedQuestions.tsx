@@ -3,171 +3,90 @@ import {  Form } from "react-bootstrap";
 //import { Report } from "./NavToReport";
 
 export function DetailedQuestions(): JSX.Element {
-    const [optionD1, setOptionD1] = useState<string>("");
-    function updateOptionD1(event: React.ChangeEvent<HTMLInputElement>) {
-        setOptionD1(event.target.value);
-    }
-    const [optionD2, setOptionD2] = useState<string>("");
-    function updateOptionD2(event: React.ChangeEvent<HTMLInputElement>) {
-        setOptionD2(event.target.value);
-    }
-    const [optionD3, setOptionD3] = useState<string>("");
-    function updateOptionD3(event: React.ChangeEvent<HTMLInputElement>) {
-        setOptionD3(event.target.value);
-    }
-    const [optionD4, setOptionD4] = useState<string>("");
-    function updateOptionD4(event: React.ChangeEvent<HTMLInputElement>) {
-        setOptionD4(event.target.value);
-    }
-    const [optionD5, setOptionD5] = useState<string>("");
-    function updateOptionD5(event: React.ChangeEvent<HTMLInputElement>) {
-        setOptionD5(event.target.value);
-    }
+    const [Q1Answer, setQ1Answer] = useState("");
+    const changeAnswer1 = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setQ1Answer(event.target.value);
+    };
+    const [Q2Answer, setQ2Answer] = useState("");
+    const changeAnswer2 = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setQ2Answer(event.target.value);
+    };
+    const [Q3Answer, setQ3Answer] = useState("");
+    const changeAnswer3 = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setQ3Answer(event.target.value);
+    };
+    const [Q4Answer, setQ4Answer] = useState("");
+    const changeAnswer4 = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setQ4Answer(event.target.value);
+    };
+    const [Q5Answer, setQ5Answer] = useState("");
+    const changeAnswer5 = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setQ5Answer(event.target.value);
+    };
+    const [Q6Answer, setQ6Answer] = useState("");
+    const changeAnswer6 = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setQ6Answer(event.target.value);
+    };
+    const [Q7Answer, setQ7Answer] = useState("");
+    const changeAnswer7 = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setQ7Answer(event.target.value);
+    };
     return <div>
-                <h3>Detailed Questions</h3>
-                Question 1
-                <Form.Check
-                type="radio"
-                name="options1"
-                onChange={updateOptionD1}
-                id="options1-check-A"
-                label="A"
-                value="A"
-                checked={optionD1 === "A"}
-                />
-                <Form.Check
-                type="radio"
-                name="options1"
-                onChange={updateOptionD1}
-                id="options1-check-B"
-                label="B"
-                value="B"
-                checked={optionD1 === "B"}
-                />
-                <Form.Check
-                type="radio"
-                name="options1"
-                onChange={updateOptionD1}
-                id="options1-check-C"
-                label="C"
-                value="C"
-                checked={optionD1 === "C"}
-                />
-                <br></br>
-                Question 2
-                <Form.Check
-                type="radio"
-                name="options2"
-                onChange={updateOptionD2}
-                id="options2-check-A"
-                label="A"
-                value="A"
-                checked={optionD2 === "A"}
-                />
-                <Form.Check
-                type="radio"
-                name="options2"
-                onChange={updateOptionD2}
-                id="options2-check-B"
-                label="B"
-                value="B"
-                checked={optionD2 === "B"}
-                />
-                <Form.Check
-                type="radio"
-                name="options2"
-                onChange={updateOptionD2}
-                id="options2-check-C"
-                label="C"
-                value="C"
-                checked={optionD2 === "C"}
-                />
-                <br></br>
-                Question 3
-                <Form.Check
-                type="radio"
-                name="options3"
-                onChange={updateOptionD3}
-                id="options3-check-A"
-                label="A"
-                value="A"
-                checked={optionD3 === "A"}
-                />
-                <Form.Check
-                type="radio"
-                name="options3"
-                onChange={updateOptionD3}
-                id="options3-check-B"
-                label="B"
-                value="B"
-                checked={optionD3 === "B"}
-                />
-                <Form.Check
-                type="radio"
-                name="options3"
-                onChange={updateOptionD3}
-                id="options3-check-C"
-                label="C"
-                value="C"
-                checked={optionD3 === "C"}
-                />
-                <br></br>
-                Question 4
-                <Form.Check
-                type="radio"
-                name="options4"
-                onChange={updateOptionD4}
-                id="options4-check-A"
-                label="A"
-                value="A"
-                checked={optionD4 === "A"}
-                />
-                <Form.Check
-                type="radio"
-                name="options4"
-                onChange={updateOptionD4}
-                id="options4-check-B"
-                label="B"
-                value="B"
-                checked={optionD4 === "B"}
-                />
-                <Form.Check
-                type="radio"
-                name="options4"
-                onChange={updateOptionD4}
-                id="options4-check-C"
-                label="C"
-                value="C"
-                checked={optionD4 === "C"}
-                />
-                <br></br>
-                Question 5
-                <Form.Check
-                type="radio"
-                name="options5"
-                onChange={updateOptionD5}
-                id="options5-check-A"
-                label="A"
-                value="A"
-                checked={optionD5 === "A"}
-                />
-                <Form.Check
-                type="radio"
-                name="options5"
-                onChange={updateOptionD5}
-                id="options5-check-B"
-                label="B"
-                value="B"
-                checked={optionD5 === "B"}
-                />
-                <Form.Check
-                type="radio"
-                name="options5"
-                onChange={updateOptionD5}
-                id="options5-check-C"
-                label="C"
-                value="C"
-                checked={optionD5 === "C"}
-                /><p></p>
+            <h3>Detailed Questions</h3>
+            <label htmlFor="Q1answer">Do you consider yourself an introvert or an extrovert? </label>
+            <input                
+            type="text"
+            id="Q1answer"
+            value={Q1Answer}
+            onChange={changeAnswer1}
+            />
+            <br></br><br></br>
+            <label htmlFor="Q2answer">Does remote or in-person work sound more appealing? </label>
+            <input                
+            type="text"
+            id="Q2answer"
+            value={Q2Answer}
+            onChange={changeAnswer2}
+            />
+            <br></br><br></br>
+            <label htmlFor="Q3answer">Does the societal view of your line of work matter? </label>
+            <input                
+            type="text"
+            id="Q3answer"
+            value={Q3Answer}
+            onChange={changeAnswer3}
+            />
+            <br></br><br></br>
+            <label htmlFor="Q4answer">Are you preferential to urban or rural settings? </label>
+            <input                
+            type="text"
+            id="Q4answer"
+            value={Q4Answer}
+            onChange={changeAnswer4}
+            />
+            <br></br><br></br>
+            <label htmlFor="Q5answer">Does traveling for work sound desirable? </label>
+            <input                
+            type="text"
+            id="Q5answer"
+            value={Q5Answer}
+            onChange={changeAnswer5}
+            />
+            <br></br><br></br>
+            <label htmlFor="Q6answer">Do/Did you like school? What part, or parts, were your favorite? </label>
+            <input                
+            type="text"
+            id="Q6answer"
+            value={Q6Answer}
+            onChange={changeAnswer6}
+            />
+            <br></br><br></br>
+            <label htmlFor="Q7answer">How appealing does a desk-job sound? </label>
+            <input                
+            type="text"
+            id="Q7answer"
+            value={Q7Answer}
+            onChange={changeAnswer7}
+            />
     </div>
 }
