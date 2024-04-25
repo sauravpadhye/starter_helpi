@@ -96,10 +96,10 @@ export function DetailedQuestions(): JSX.Element {
         if (Q2Answer !== "" ){
             newProg += 1/7;
         }
-        if (newAns !== "" ){
+        if (Q3Answer !== "" ){
             newProg += 1/7;
         }
-        if (Q4Answer !== "" ){
+        if (newAns !== "" ){
             newProg += 1/7;
         }
         if (Q5Answer !== "" ){
