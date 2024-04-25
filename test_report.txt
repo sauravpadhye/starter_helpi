@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (45 ms)
+  ✕ renders learn react link (40 ms)
 
   ● renders learn react link
 
@@ -39,21 +39,21 @@ FAIL src/App.test.tsx
           [36m<p />[39m
           [36m<button[39m
             [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mstyle[39m=[32m"margin-right: 20px;"[39m
+            [33mstyle[39m=[32m"width: 150px; height: 50px; margin-right: 20px;"[39m
             [33mtype[39m=[32m"button"[39m
           [36m>[39m
             [0mHome[0m
           [36m</button>[39m
           [36m<button[39m
             [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mstyle[39m=[32m"margin-left: 20px;"[39m
+            [33mstyle[39m=[32m"width: 150px; height: 50px; margin-left: 20px;"[39m
             [33mtype[39m=[32m"button"[39m
           [36m>[39m
             [0mBasic Questions[0m
           [36m</button>[39m
           [36m<button[39m
             [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mstyle[39m=[32m"margin-left: 40px;"[39m
+            [33mstyle[39m=[32m"width: 150px; height: 50px; margin-left: 40px;"[39m
             [33mtype[39m=[32m"button"[39m
           [36m>[39m
             [0mDetailed Questions[0m
@@ -92,10 +92,10 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |   12.12 |    28.57 |     7.4 |   12.12 |                   
+All files              |    2.61 |      1.9 |     7.4 |    2.61 |                   
  App.tsx               |      50 |       50 |   16.66 |      50 | 14,22-28,61-63    
- BasicQuestions.tsx    |       0 |      100 |       0 |       0 | 5-33              
- DetailedQuestions.tsx |       0 |      100 |       0 |       0 | 4-32              
+ BasicQuestions.tsx    |       0 |        0 |       0 |       0 | 5-202             
+ DetailedQuestions.tsx |       0 |        0 |       0 |       0 | 4-201             
  Home.tsx              |     100 |      100 |     100 |     100 |                   
  NavToReport.tsx       |       0 |        0 |       0 |       0 | 6-9               
  index.tsx             |       0 |      100 |     100 |       0 | 7-19              
@@ -104,5 +104,5 @@ All files              |   12.12 |    28.57 |     7.4 |   12.12 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.628 s
+Time:        2.722 s
 Ran all test suites.
