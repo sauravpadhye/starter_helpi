@@ -5,32 +5,202 @@ export function BasicQuestions(): JSX.Element {
     const [optionB1, setOptionB1] = useState<string>("");
     function updateOptionB1(event: React.ChangeEvent<HTMLInputElement>) {
         setOptionB1(event.target.value);
+        const newB1 = event.target.value;
+        let newProg: number = 0;
+        if (newB1 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB2 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB3 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB4 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB5 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB6 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB7 !== "" ){
+            newProg += 1/7;
+        }
+        setProgressVal(newProg);
     }
     const [optionB2, setOptionB2] = useState<string>("");
     function updateOptionB2(event: React.ChangeEvent<HTMLInputElement>) {
         setOptionB2(event.target.value);
+        const newB2 = event.target.value;
+        let newProg: number = 0;
+        if (optionB1 !== "" ){
+            newProg += 1/7;
+        }
+        if (newB2 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB3 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB4 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB5 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB6 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB7 !== "" ){
+            newProg += 1/7;
+        }
+        setProgressVal(newProg);
     }
     const [optionB3, setOptionB3] = useState<string>("");
     function updateOptionB3(event: React.ChangeEvent<HTMLInputElement>) {
         setOptionB3(event.target.value);
+        const newB3 = event.target.value;
+        let newProg: number = 0;
+        if (optionB1 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB2 !== "" ){
+            newProg += 1/7;
+        }
+        if (newB3 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB4 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB5 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB6 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB7 !== "" ){
+            newProg += 1/7;
+        }
+        setProgressVal(newProg);
     }
     const [optionB4, setOptionB4] = useState<string>("");
     function updateOptionB4(event: React.ChangeEvent<HTMLInputElement>) {
         setOptionB4(event.target.value);
+        const newB4 = event.target.value;
+        let newProg: number = 0;
+        if (optionB1 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB2 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB3 !== "" ){
+            newProg += 1/7;
+        }
+        if (newB4 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB5 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB6 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB7 !== "" ){
+            newProg += 1/7;
+        }
+        setProgressVal(newProg);
     }
     const [optionB5, setOptionB5] = useState<string>("");
     function updateOptionB5(event: React.ChangeEvent<HTMLInputElement>) {
         setOptionB5(event.target.value);
+        const newB5 = event.target.value;
+        let newProg: number = 0;
+        if (optionB1 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB2 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB3 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB4 !== "" ){
+            newProg += 1/7;
+        }
+        if (newB5 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB6 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB7 !== "" ){
+            newProg += 1/7;
+        }
+        setProgressVal(newProg);
     }
     const [optionB6, setOptionB6] = useState<string>("");
     function updateOptionB6(event: React.ChangeEvent<HTMLInputElement>) {
         setOptionB6(event.target.value);
+        const newB6 = event.target.value;
+        let newProg: number = 0;
+        if (optionB1 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB2 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB3 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB4 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB5 !== "" ){
+            newProg += 1/7;
+        }
+        if (newB6 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB7 !== "" ){
+            newProg += 1/7;
+        }
+        setProgressVal(newProg);
     }
     const [optionB7, setOptionB7] = useState<string>("");
     function updateOptionB7(event: React.ChangeEvent<HTMLInputElement>) {
         setOptionB7(event.target.value);
+        const newB7 = event.target.value;
+        let newProg: number = 0;
+        if (optionB1 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB2 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB3 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB4 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB5 !== "" ){
+            newProg += 1/7;
+        }
+        if (optionB6 !== "" ){
+            newProg += 1/7;
+        }
+        if (newB7 !== "" ){
+            newProg += 1/7;
+        }
+        setProgressVal(newProg);
     }
+    const [progressVal, setProgressVal] = useState<number>(0);
     return <div>
+        <progress value = {progressVal}></progress>
                 <h3>Basic Questions</h3>
                 1. What is your preferred work environment?
                 <Form.Check
