@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Report } from "./NavToReport";
 
 export function DetailedQuestions(): JSX.Element {
     const [Q1Answer, setQ1Answer] = useState("");
