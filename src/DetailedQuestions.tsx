@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import {  Form } from "react-bootstrap";
-//import { Report } from "./NavToReport";
+import { Report } from "./NavToReport";
 
 export function DetailedQuestions(): JSX.Element {
     const [Q1Answer, setQ1Answer] = useState("");
