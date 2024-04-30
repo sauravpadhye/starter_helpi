@@ -456,8 +456,10 @@ export function BasicQuestions(): JSX.Element {
                 />
                 <p></p>
         </div>:null}
-        {progressVal > .995 ? <Button onClick = {()=> setReportMode(true)}>Generate Results
-        </Button>:null}
-        {reportMode === true ? <h3>Hello</h3>:null}
+        {reportMode === false ? <br></br>:null}
+        {(progressVal > .995) && (reportMode === false) ? <div>
+            <Button onClick = {()=> setReportMode(true)}>Generate Results
+        </Button><p></p></div>:null}
+        {reportMode === true ? <h3>Put Report Here</h3>:null}
     </div>
 }
