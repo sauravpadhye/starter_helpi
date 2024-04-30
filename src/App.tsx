@@ -30,6 +30,25 @@ function App() {
   type pageOption = 'home' | 'basic' | 'detailed'
   const [pageStatus, setPageStatus] = useState<pageOption>("home");
 
+  //Include statement 
+  const OpenAI = require("openai");
+  const openai = new OpenAI({
+    apiKey: key,
+    dangerouslyAllowBrowser: true
+  });
+
+  //const [res, setRes] = useState<string>("");
+
+  async function sendGPT() {
+    const response = await openai.chat.completions.create({
+      model: "gpt-4",
+      messages: [{ role: "user", content: "What is 2 plus 2?"}],
+      max_tokens: 1000
+    });
+    //setRes(response.data.choices[0].text);
+    console.log(response.choices[0].message.content);
+  }
+
   return (
     /*
 <header className="App-header">
@@ -65,6 +84,7 @@ function App() {
       {pageStatus === "home" ? <Home></Home>:null}
       {pageStatus === "basic" ? <BasicQuestions></BasicQuestions>:null}
       {pageStatus === "detailed" ? <DetailedQuestions></DetailedQuestions>:null}
+      <Button className="Results-Button" onClick={sendGPT}>Get Results</Button>
     </div>
   );
 }
