@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 
 export function DetailedQuestions(): JSX.Element {
+    const [reportMode, setReportMode] = useState<boolean>(false);
     const [Q1Answer, setQ1Answer] = useState("");
     const changeAnswer1 = (event: React.ChangeEvent<HTMLInputElement>) => {
         setQ1Answer(event.target.value);
@@ -34,10 +36,10 @@ export function DetailedQuestions(): JSX.Element {
         setQ2Answer(event.target.value);
         const newAns = event.target.value;
         let newProg: number = 0;
-        if (newAns !== "" ){
+        if (Q1Answer !== "" ){
             newProg += 1/7;
         }
-        if (Q2Answer !== "" ){
+        if (newAns !== "" ){
             newProg += 1/7;
         }
         if (Q3Answer !== "" ){
@@ -199,6 +201,9 @@ export function DetailedQuestions(): JSX.Element {
     };
     const [progressVal, setProgressVal] = useState<number>(0);
     return <div>
+        {reportMode === false ?
+        <div>
+        <p>{Math.round(progressVal * 100)} % Complete</p>
         <progress value = {progressVal}></progress>
             <h3>Detailed Questions</h3>
             <label htmlFor="Q1answer">Do you consider yourself an introvert or an extrovert? </label>
@@ -256,5 +261,11 @@ export function DetailedQuestions(): JSX.Element {
             value={Q7Answer}
             onChange={changeAnswer7}
             />
+            </div>:null}
+            {reportMode === false ? <br></br>:null}
+        {(progressVal > .995) && (reportMode === false) ? <div>
+            <Button onClick = {()=> setReportMode(true)}>Generate Results
+        </Button><p></p></div>:null}
+        {reportMode === true ? <h3>Put Report Here</h3>:null}
     </div>
 }
