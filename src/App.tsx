@@ -14,6 +14,8 @@ if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
 
+export { keyData };
+
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
   
@@ -30,14 +32,13 @@ function App() {
   type pageOption = 'home' | 'basic' | 'detailed'
   const [pageStatus, setPageStatus] = useState<pageOption>("home");
 
-  //Include statement 
+
+  /*
   const OpenAI = require("openai");
   const openai = new OpenAI({
     apiKey: key,
     dangerouslyAllowBrowser: true
   });
-
-  //const [res, setRes] = useState<string>("");
 
   async function sendGPT() {
     const response = await openai.chat.completions.create({
@@ -48,6 +49,7 @@ function App() {
     //setRes(response.data.choices[0].text);
     console.log(response.choices[0].message.content);
   }
+  */
 
   return (
     /*
@@ -84,7 +86,6 @@ function App() {
       {pageStatus === "home" ? <Home></Home>:null}
       {pageStatus === "basic" ? <BasicQuestions></BasicQuestions>:null}
       {pageStatus === "detailed" ? <DetailedQuestions></DetailedQuestions>:null}
-      <Button className="Results-Button" onClick={sendGPT}>Get Results</Button>
     </div>
   );
 }

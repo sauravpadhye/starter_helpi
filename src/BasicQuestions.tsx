@@ -1,3 +1,4 @@
+import { keyData } from "./App";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 //import { Report } from "./NavToReport";
@@ -201,6 +202,29 @@ export function BasicQuestions(): JSX.Element {
         setProgressVal(newProg);
     }
     const [progressVal, setProgressVal] = useState<number>(0);
+
+    const [res, setRes] = useState<string>("");
+
+    const OpenAI = require("openai");
+    const openai = new OpenAI({
+        apiKey: keyData,
+        dangerouslyAllowBrowser: true
+    });
+
+    async function sendGPT() {
+        const response = await openai.chat.completions.create({
+          model: "gpt-4",
+          messages: [{ role: "user", content: "What is 2 plus 2?"}],
+          max_tokens: 1000
+        });
+        setRes(response.choices[0].message.content);
+    }
+
+    function handleClick() {
+        sendGPT();
+        setReportMode(true);
+    }
+
     return <div>
         {reportMode === false ? 
         <div>
@@ -456,10 +480,11 @@ export function BasicQuestions(): JSX.Element {
                 />
                 <p></p>
         </div>:null}
+
         {reportMode === false ? <br></br>:null}
         {(progressVal > .995) && (reportMode === false) ? <div>
-            <Button onClick = {()=> setReportMode(true)}>Generate Results
+            <Button onClick = {()=> handleClick()}>Generate Results
         </Button><p></p></div>:null}
-        {reportMode === true ? <h3>Put Report Here</h3>:null}
+        {reportMode === true ? <h3>{res}</h3>:null}
     </div>
 }
