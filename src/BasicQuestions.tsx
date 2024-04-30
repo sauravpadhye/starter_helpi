@@ -214,7 +214,7 @@ export function BasicQuestions(): JSX.Element {
     async function sendGPT() {
         const response = await openai.chat.completions.create({
           model: "gpt-4",
-          messages: [{ role: "user", content: "What is 2 plus 2?"}],
+          messages: [{ role: "user", content: `Give me 3 career choices, one sentence description and new line after each description. Preferred work environment is ${optionB1}. Favorite subject is ${optionB2}. Comfort level with computers/technology is ${optionB3}. ${optionB4} to having to travel for work. Strongest character trait is ${optionB5}. Wants to live in a ${optionB6} area. Salary is ${optionB7}.`}],
           max_tokens: 1000
         });
         setRes(response.choices[0].message.content);
