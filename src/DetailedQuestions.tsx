@@ -34,10 +34,10 @@ export function DetailedQuestions(): JSX.Element {
         setQ2Answer(event.target.value);
         const newAns = event.target.value;
         let newProg: number = 0;
-        if (newAns !== "" ){
+        if (Q1Answer !== "" ){
             newProg += 1/7;
         }
-        if (Q2Answer !== "" ){
+        if (newAns !== "" ){
             newProg += 1/7;
         }
         if (Q3Answer !== "" ){

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
+//import { Report } from "./NavToReport";
 
 export function BasicQuestions(): JSX.Element {
+    const [reportMode, setReportMode] = useState<boolean>(false);
     const [optionB1, setOptionB1] = useState<string>("");
     function updateOptionB1(event: React.ChangeEvent<HTMLInputElement>) {
         setOptionB1(event.target.value);
@@ -200,6 +202,9 @@ export function BasicQuestions(): JSX.Element {
     }
     const [progressVal, setProgressVal] = useState<number>(0);
     return <div>
+        {reportMode === false ? 
+        <div>
+            <p>{Math.round(progressVal * 100)} % Complete</p>
         <progress value = {progressVal}></progress>
                 <h3>Basic Questions</h3>
                 1. What is your preferred work environment?
@@ -450,5 +455,9 @@ export function BasicQuestions(): JSX.Element {
                 checked={optionB7 === "Not important at all"}
                 />
                 <p></p>
+        </div>:null}
+        {progressVal > .995 ? <Button onClick = {()=> setReportMode(true)}>Generate Results
+        </Button>:null}
+        {reportMode === true ? <h3>Hello</h3>:null}
     </div>
 }
