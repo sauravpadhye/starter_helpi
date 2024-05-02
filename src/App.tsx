@@ -5,6 +5,10 @@ import { Button, Form } from 'react-bootstrap';
 import { BasicQuestions } from "./BasicQuestions";
 import { DetailedQuestions } from "./DetailedQuestions";
 import { Home } from "./Home";
+import teacherJob from './Teacher_job.jpg'
+import businessJob from './Business_job.jpg'
+import scienceJob from './Science_job.jpg'
+import musicJob from './Music_job.jpg'
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -83,6 +87,10 @@ function App() {
       <Button style={{ width:'150px',height:'50px',marginLeft: '20px' }} onClick = {()=>setPageStatus("basic")}>Basic Questions</Button>
       <Button style={{ width:'150px',height:'50px',marginLeft: '40px' }} onClick = {()=>setPageStatus("detailed")}>Detailed Questions</Button>
       <hr></hr>
+      <img src={teacherJob} className="App-logo" alt="logo" />
+      <img src={businessJob} className="App-logo" alt="logo" />
+      <img src={musicJob} className="App-logo" alt="logo" />
+      <img src={scienceJob} className="App-logo" alt="logo" />
       {pageStatus === "home" ? <Home></Home>:null}
       {pageStatus === "basic" ? <BasicQuestions></BasicQuestions>:null}
       {pageStatus === "detailed" ? <DetailedQuestions></DetailedQuestions>:null}
