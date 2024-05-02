@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import { keyData } from "./App";
 
 export function DetailedQuestions(): JSX.Element {
     const [reportMode, setReportMode] = useState<boolean>(false);
@@ -200,6 +201,34 @@ export function DetailedQuestions(): JSX.Element {
         setProgressVal(newProg);
     };
     const [progressVal, setProgressVal] = useState<number>(0);
+
+    const [res, setRes] = useState<string[]>([]);
+
+    const OpenAI = require("openai");
+    const openai = new OpenAI({
+        apiKey: keyData,
+        dangerouslyAllowBrowser: true
+    });
+
+    function splitString(input: string): string[] {
+        const regex = /\b(?=\d)/;
+        return input.split(regex);
+    }
+
+    async function sendGPT() {
+        const response = await openai.chat.completions.create({
+          model: "gpt-4",
+          messages: [{ role: "user", content: `Give me 3 career choices, one sentence description. The following are results from a career survey quiz. Q: you consider yourself an introvert or an extrovert? A: ${Q1Answer}. Q: Does remote or in-person work sound more appealing? A: ${Q2Answer}. Q: Does the societal view of your line of work matter? A: ${Q3Answer}. Q: Are you preferential to urban or rural settings? A: ${Q4Answer}. Q: Does traveling for work sound desirable? A: ${Q5Answer}. Q: Do/Did you like school? What part, or parts, were your favorite? A: ${Q6Answer}. Q: How appealing does a desk-job sound? A: ${Q7Answer}.`}],
+          max_tokens: 1000
+        });
+        setRes(splitString(response.choices[0].message.content));
+    }
+
+    function handleClick() {
+        sendGPT();
+        setReportMode(true);
+    }
+
     return <div>
         {reportMode === false ?
         <div>
@@ -264,8 +293,8 @@ export function DetailedQuestions(): JSX.Element {
             </div>:null}
             {reportMode === false ? <br></br>:null}
         {(progressVal > .995) && (reportMode === false) ? <div>
-            <Button onClick = {()=> setReportMode(true)}>Generate Results
+            <Button onClick = {()=> handleClick()}>Generate Results
         </Button><p></p></div>:null}
-        {reportMode === true ? <h3>Put Report Here</h3>:null}
+        {reportMode === true ? <div><h3>{res[0]}</h3><h3>{res[1]}</h3><h3>{res[2]}</h3></div>:null}
     </div>
 }
