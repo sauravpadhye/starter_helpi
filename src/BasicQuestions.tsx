@@ -1,7 +1,6 @@
 import { keyData } from "./App";
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-//import { Report } from "./NavToReport";
 
 export function BasicQuestions(): JSX.Element {
     const [reportMode, setReportMode] = useState<boolean>(false);

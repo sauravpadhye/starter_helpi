@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-//import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { BasicQuestions } from "./BasicQuestions";
@@ -29,48 +28,12 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
+
+  //state setup for page navigation
   type pageOption = 'home' | 'basic' | 'detailed'
   const [pageStatus, setPageStatus] = useState<pageOption>("home");
 
-
-  /*
-  const OpenAI = require("openai");
-  const openai = new OpenAI({
-    apiKey: key,
-    dangerouslyAllowBrowser: true
-  });
-
-  async function sendGPT() {
-    const response = await openai.chat.completions.create({
-      model: "gpt-4",
-      messages: [{ role: "user", content: "What is 2 plus 2?"}],
-      max_tokens: 1000
-    });
-    //setRes(response.data.choices[0].text);
-    console.log(response.choices[0].message.content);
-  }
-  */
-
   return (
-    /*
-<header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          CAREER SURVEVY PAGE
-        </p>
-        <p>
-          Group Members: Saurav Padhye, Joseph Dougherty, Evan Gantert
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    */
     <div className="App">
       <Form>
         <Form.Label>API Key:</Form.Label>
