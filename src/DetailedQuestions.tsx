@@ -203,10 +203,11 @@ export function DetailedQuestions(): JSX.Element {
     const [progressVal, setProgressVal] = useState<number>(0);
 
     const [res, setRes] = useState<string[]>([]);
-
-    const [res1, setRes1] = useState<string[]>();
-    const [res2, setRes2] = useState<string[]>();
-    const [res3, setRes3] = useState<string[]>();
+/*
+    const [res1, setRes1] = useState<string[]>([]);
+    const [res2, setRes2] = useState<string[]>([]);
+    const [res3, setRes3] = useState<string[]>([]);
+    */
 
     const OpenAI = require("openai");
     const openai = new OpenAI({
@@ -226,10 +227,14 @@ export function DetailedQuestions(): JSX.Element {
           max_tokens: 1000
         });
         setRes(splitString(response.choices[0].message.content));
+    }
+    /*
+    async function splitResults(){
         setRes1(res[0].split(":"))
         setRes2(res[1].split(":"))
         setRes3(res[2].split(":"))
     }
+    */
 
     function handleClick() {
         sendGPT();
@@ -237,12 +242,23 @@ export function DetailedQuestions(): JSX.Element {
     }
 
     function displayResults() { //update this function with columns
+        //splitResults();
         return (
             <div>
-                <h1>Career Options</h1>
-                <h3>{res[0]}</h3>
-                <h3>{res[1]}</h3>
-                <h3>{res[2]}</h3>
+                <div className="container">
+                <div className="column">
+                    <h1>Career #1</h1>
+                    <h2>{res[0]}</h2>
+                </div>
+                <div className="column">
+                    <h1>Career #2</h1>
+                    <h2>{res[1]}</h2>
+                </div>
+                <div className="column">
+                    <h1>Career #3</h1>
+                    <h2>{res[2]}</h2>
+                </div>
+            </div>
             </div>
         )
     }
@@ -311,7 +327,7 @@ export function DetailedQuestions(): JSX.Element {
             </div>:null}
             {reportMode === false ? <br></br>:null}
         {(progressVal > .995) && (reportMode === false) ? <div>
-            <Button onClick = {()=> handleClick()}>Generate Results
+            <Button className="headerButton" onClick = {()=> handleClick()}>Generate Results
         </Button><p></p></div>:null}
         {reportMode === true ? displayResults():null}
     </div>

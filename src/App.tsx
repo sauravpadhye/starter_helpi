@@ -38,6 +38,11 @@ function App() {
       <p></p>
       <img src={bookLogo} className="bookLogo" alt="business"/>
       <span>CareerCounselor</span>
+      <Form>
+        <Form.Label>API Key:</Form.Label>
+        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
+      </Form>
       <Button className="headerButton" style={{ position:'absolute',width:'150px',height:'50px',marginLeft: '190px',top:'30px' }}onClick = {()=>setPageStatus("home")}>Home</Button>
       <Button className="headerButton" style={{ position:'absolute',width:'150px',height:'50px',marginLeft: '370px',top:'30px' }}onClick = {()=>setPageStatus("basic")}>Basic</Button>
       <Button className="headerButton" style={{ position:'absolute',width:'150px',height:'50px',marginLeft: '550px',top:'30px' }} onClick = {()=>setPageStatus("detailed")}>Detailed</Button>
@@ -48,12 +53,6 @@ function App() {
       {pageStatus === "home" ? <Button className="headerButton" style={{position: 'relative',width:'150px',height:'50px',marginRight:'620px'}}onClick = {()=>setPageStatus("basic")}>Basic</Button>:null}
       {pageStatus === "home" ? <Button className="headerButton" style={{width:'150px',height:'50px' }} onClick = {()=>setPageStatus("detailed")}>Detailed</Button>:null}
       {pageStatus === "home" ? <h6> </h6>:null}
-      <Form>
-        <Form.Label>API Key:</Form.Label>
-        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-        <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-      </Form>
     </div>
   );
 }
