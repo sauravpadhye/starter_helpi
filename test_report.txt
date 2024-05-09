@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (51 ms)
+  ✕ renders learn react link (58 ms)
 
   ● renders learn react link
 
@@ -15,6 +15,83 @@ FAIL src/App.test.tsx
         [36m<div[39m
           [33mclass[39m=[32m"App"[39m
         [36m>[39m
+          [36m<p />[39m
+          [36m<img[39m
+            [33malt[39m=[32m"business"[39m
+            [33mclass[39m=[32m"bookLogo"[39m
+            [33msrc[39m=[32m"logo.svg"[39m
+          [36m/>[39m
+          [36m<span>[39m
+            [0mCareerCounselor[0m
+          [36m</span>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"headerButton btn btn-primary"[39m
+            [33mstyle[39m=[32m"position: absolute; width: 150px; height: 50px; margin-left: 190px; top: 30px;"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mHome[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"headerButton btn btn-primary"[39m
+            [33mstyle[39m=[32m"position: absolute; width: 150px; height: 50px; margin-left: 370px; top: 30px;"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mBasic[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"headerButton btn btn-primary"[39m
+            [33mstyle[39m=[32m"position: absolute; width: 150px; height: 50px; margin-left: 550px; top: 30px;"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mDetailed[0m
+          [36m</button>[39m
+          [36m<hr />[39m
+          [36m<div>[39m
+            [36m<h1>[39m
+              [0mWelcome to our career survey page![0m
+            [36m</h1>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"container"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"column"[39m
+              [36m>[39m
+                [36m<h2>[39m
+                  [0mBasic Quiz[0m
+                [36m</h2>[39m
+                [36m<p>[39m
+                  [0mExperience a quick and engaging assessment of your knowledge with our Basic Quiz. Answer multiple-choice questions covering a range of topics, perfect for a fun and informative quiz session. Start your learning journey with ease and discover how much you know![0m
+                [36m</p>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"column"[39m
+              [36m>[39m
+                [36m<h2>[39m
+                  [0mDetailed Quiz[0m
+                [36m</h2>[39m
+                [36m<p>[39m
+                  [0mEmbark on an in-depth exploration of your knowledge with our Detailed Quiz. Delve into challenging short-answer questions designed to test your understanding and critical thinking skills. Get ready to dive deep and uncover new insights![0m
+                [36m</p>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"headerButton btn btn-primary"[39m
+            [33mstyle[39m=[32m"position: relative; width: 150px; height: 50px; margin-right: 620px;"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mBasic[0m
+          [36m</button>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"headerButton btn btn-primary"[39m
+            [33mstyle[39m=[32m"width: 150px; height: 50px;"[39m
+            [33mtype[39m=[32m"button"[39m
+          [36m>[39m
+            [0mDetailed[0m
+          [36m</button>[39m
+          [36m<h6>[39m
+            [0m [0m
+          [36m</h6>[39m
           [36m<form[39m
             [33mclass[39m=[32m""[39m
           [36m>[39m
@@ -36,37 +113,6 @@ FAIL src/App.test.tsx
               [0mSubmit[0m
             [36m</button>[39m
           [36m</form>[39m
-          [36m<p />[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mstyle[39m=[32m"width: 150px; height: 50px; margin-right: 20px;"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mHome[0m
-          [36m</button>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mstyle[39m=[32m"width: 150px; height: 50px; margin-left: 20px;"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mBasic Questions[0m
-          [36m</button>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mstyle[39m=[32m"width: 150px; height: 50px; margin-left: 40px;"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mDetailed Questions[0m
-          [36m</button>[39m
-          [36m<hr />[39m
-          [36m<div>[39m
-            [36m<h1>[39m
-              [0mWelcome to our career survey page![0m
-            [36m</h1>[39m
-            [36m<h5>[39m
-              [0mAuthors: Saurav Padhye, Joe Dougherty, Evan Gantert[0m
-            [36m</h5>[39m
-          [36m</div>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -92,17 +138,16 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    2.43 |     1.73 |    5.71 |    2.43 |                   
- App.tsx               |      50 |       50 |   16.66 |      50 | 14,24-30,82-84    
- BasicQuestions.tsx    |       0 |        0 |       0 |       0 | 7-491             
+All files              |    2.43 |     2.99 |    5.55 |    2.43 |                   
+ App.tsx               |   43.75 |       50 |    12.5 |   43.75 | 15,25-31,41-49    
+ BasicQuestions.tsx    |       0 |        0 |       0 |       0 | 6-494             
  DetailedQuestions.tsx |       0 |        0 |       0 |       0 | 6-296             
  Home.tsx              |     100 |      100 |     100 |     100 |                   
- NavToReport.tsx       |       0 |        0 |       0 |       0 | 6-9               
  index.tsx             |       0 |      100 |     100 |       0 | 7-19              
  reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10              
 -----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.774 s
+Time:        2.652 s
 Ran all test suites.
