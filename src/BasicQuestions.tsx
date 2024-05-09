@@ -207,7 +207,11 @@ export function BasicQuestions(): JSX.Element {
     const [progressVal, setProgressVal] = useState<number>(0);
 
     const [res, setRes] = useState<string[]>([]);
-
+/*
+    const [res1, setRes1] = useState<string[]>([]);
+    const [res2, setRes2] = useState<string[]>([]);
+    const [res3, setRes3] = useState<string[]>([]);
+*/
     const OpenAI = require("openai");
     const openai = new OpenAI({
         apiKey: keyData,
@@ -227,10 +231,39 @@ export function BasicQuestions(): JSX.Element {
         });
         setRes(splitString(response.choices[0].message.content));
     }
+    /*
+    async function splitResults(){
+        setRes1(res[0].split(":"))
+        setRes2(res[1].split(":"))
+        setRes3(res[2].split(":"))
+    }
+    */
 
     function handleClick() {
         sendGPT();
         setReportMode(true);
+    }
+
+    function displayResults() { //update this function with columns
+        //splitResults();
+        return (
+            <div>
+                <div className="container">
+                <div className="column">
+                    <h1>Career #1</h1>
+                    <h2>{res[0]}</h2>
+                </div>
+                <div className="column">
+                    <h1>Career #2</h1>
+                    <h2>{res[1]}</h2>
+                </div>
+                <div className="column">
+                    <h1>Career #3</h1>
+                    <h2>{res[2]}</h2>
+                </div>
+            </div>
+            </div>
+        )
     }
 
     return <div>
@@ -493,20 +526,6 @@ export function BasicQuestions(): JSX.Element {
         {(progressVal > .995) && (reportMode === false) ? <div>
             <Button className="headerButton" onClick = {()=> handleClick()}>Generate Results
         </Button><p></p></div>:null}
-        {reportMode === true ? <div className="container">
-    <div className="column">
-        <h1>Career #1</h1>
-        <h2>{res[0]}</h2>
-    </div>
-    <div className="column">
-        <h1>Career #2</h1>
-        <h2>{res[1]}</h2>
-    </div>
-    <div className="column">
-        <h1>Career #3</h1>
-        <h2>{res[2]}</h2>
-    </div>
-</div>
-:null}
+        {reportMode === true ? displayResults():null}
     </div>
 }
