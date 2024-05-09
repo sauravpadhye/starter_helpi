@@ -206,7 +206,7 @@ export function BasicQuestions(): JSX.Element {
     }
     const [progressVal, setProgressVal] = useState<number>(0);
 
-    const [res, setRes] = useState<string>("");
+    const [res, setRes] = useState<string[]>([]);
 
     const OpenAI = require("openai");
     const openai = new OpenAI({
@@ -214,13 +214,18 @@ export function BasicQuestions(): JSX.Element {
         dangerouslyAllowBrowser: true
     });
 
+    function splitString(input: string): string[] {
+        const regex = /\b(?=\d)/;
+        return input.split(regex);
+    }
+
     async function sendGPT() {
         const response = await openai.chat.completions.create({
           model: "gpt-4",
           messages: [{ role: "user", content: `Give me 3 career choices, one sentence description and new line after each description. Preferred work environment is ${optionB1}. Favorite subject is ${optionB2}. Comfort level with computers/technology is ${optionB3}. ${optionB4} to having to travel for work. Strongest character trait is ${optionB5}. Wants to live in a ${optionB6} area. Salary is ${optionB7}.`}],
           max_tokens: 1000
         });
-        setRes(response.choices[0].message.content);
+        setRes(splitString(response.choices[0].message.content));
     }
 
     function handleClick() {
@@ -488,6 +493,6 @@ export function BasicQuestions(): JSX.Element {
         {(progressVal > .995) && (reportMode === false) ? <div>
             <Button onClick = {()=> handleClick()}>Generate Results
         </Button><p></p></div>:null}
-        {reportMode === true ? <h3>{res}</h3>:null}
+        {reportMode === true ? <div><h3>{res[0]}</h3><h3>{res[1]}</h3><h3>{res[2]}</h3></div>:null}
     </div>
 }
