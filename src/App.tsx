@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 //import logo from './logo.svg';
+import bookLogo from './logo.svg'
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { BasicQuestions } from "./BasicQuestions";
@@ -32,60 +33,24 @@ function App() {
   type pageOption = 'home' | 'basic' | 'detailed'
   const [pageStatus, setPageStatus] = useState<pageOption>("home");
 
-
-  /*
-  const OpenAI = require("openai");
-  const openai = new OpenAI({
-    apiKey: key,
-    dangerouslyAllowBrowser: true
-  });
-
-  async function sendGPT() {
-    const response = await openai.chat.completions.create({
-      model: "gpt-4",
-      messages: [{ role: "user", content: "What is 2 plus 2?"}],
-      max_tokens: 1000
-    });
-    //setRes(response.data.choices[0].text);
-    console.log(response.choices[0].message.content);
-  }
-  */
-
   return (
-    /*
-<header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          CAREER SURVEVY PAGE
-        </p>
-        <p>
-          Group Members: Saurav Padhye, Joseph Dougherty, Evan Gantert
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    */
     <div className="App">
+      <p></p>
+      <img src={bookLogo} className="bookLogo" alt="business"/>
+      <span>CareerCounselor</span>
+      <Button className="headerButton" style={{ position:'absolute',width:'150px',height:'50px',marginLeft: '190px',top:'30px' }}onClick = {()=>setPageStatus("home")}>Home</Button>
+      <Button className="headerButton" style={{ position:'absolute',width:'150px',height:'50px',marginLeft: '370px',top:'30px' }}onClick = {()=>setPageStatus("basic")}>Basic</Button>
+      <Button className="headerButton" style={{ position:'absolute',width:'150px',height:'50px',marginLeft: '550px',top:'30px' }} onClick = {()=>setPageStatus("detailed")}>Detailed</Button>
+      <hr></hr>
+      {pageStatus === "home" ? <Home></Home>:null}
+      {pageStatus === "basic" ? <BasicQuestions></BasicQuestions>:null}
+      {pageStatus === "detailed" ? <DetailedQuestions></DetailedQuestions>:null}
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
         <br></br>
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
-      <p></p>
-      <Button style={{ width:'150px',height:'50px',marginRight: '20px' }} onClick = {()=>setPageStatus("home")}>Home</Button>
-      <Button style={{ width:'150px',height:'50px',marginLeft: '20px' }} onClick = {()=>setPageStatus("basic")}>Basic Questions</Button>
-      <Button style={{ width:'150px',height:'50px',marginLeft: '40px' }} onClick = {()=>setPageStatus("detailed")}>Detailed Questions</Button>
-      <hr></hr>
-      {pageStatus === "home" ? <Home></Home>:null}
-      {pageStatus === "basic" ? <BasicQuestions></BasicQuestions>:null}
-      {pageStatus === "detailed" ? <DetailedQuestions></DetailedQuestions>:null}
     </div>
   );
 }
