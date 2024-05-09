@@ -208,6 +208,10 @@ export function BasicQuestions(): JSX.Element {
 
     const [res, setRes] = useState<string[]>([]);
 
+    const [res1, setRes1] = useState<string[]>();
+    const [res2, setRes2] = useState<string[]>();
+    const [res3, setRes3] = useState<string[]>();
+
     const OpenAI = require("openai");
     const openai = new OpenAI({
         apiKey: keyData,
@@ -226,11 +230,25 @@ export function BasicQuestions(): JSX.Element {
           max_tokens: 1000
         });
         setRes(splitString(response.choices[0].message.content));
+        setRes1(res[0].split(":"))
+        setRes2(res[1].split(":"))
+        setRes3(res[2].split(":"))
     }
 
     function handleClick() {
         sendGPT();
         setReportMode(true);
+    }
+
+    function displayResults() { //update this function with columns
+        return (
+            <div>
+                <h1>Career Options</h1>
+                <h3>{res[0]}</h3>
+                <h3>{res[1]}</h3>
+                <h3>{res[2]}</h3>
+            </div>
+        )
     }
 
     return <div>
@@ -493,6 +511,6 @@ export function BasicQuestions(): JSX.Element {
         {(progressVal > .995) && (reportMode === false) ? <div>
             <Button onClick = {()=> handleClick()}>Generate Results
         </Button><p></p></div>:null}
-        {reportMode === true ? <div><h3>{res[0]}</h3><h3>{res[1]}</h3><h3>{res[2]}</h3></div>:null}
+        {reportMode === true ? displayResults():null}
     </div>
 }
