@@ -45,6 +45,9 @@ function App() {
       {pageStatus === "home" ? <Home></Home>:null}
       {pageStatus === "basic" ? <BasicQuestions></BasicQuestions>:null}
       {pageStatus === "detailed" ? <DetailedQuestions></DetailedQuestions>:null}
+      {pageStatus === "home" ? <Button className="headerButton" style={{position: 'relative',width:'150px',height:'50px',marginRight:'620px'}}onClick = {()=>setPageStatus("basic")}>Basic</Button>:null}
+      {pageStatus === "home" ? <Button className="headerButton" style={{width:'150px',height:'50px' }} onClick = {()=>setPageStatus("detailed")}>Detailed</Button>:null}
+      {pageStatus === "home" ? <h6> </h6>:null}
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>

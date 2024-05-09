@@ -98,4 +98,18 @@ span {
   top: -10px;
   font-family:logoFonts;
   font-size:45px;
+  color: #7f675b;
+}
+
+.column{
+  color: #7f675b;
+}
+h3{
+  color: #7f675b;
+}
+p{
+  color: #7f675b;
+}
+h6{
+  height:100px;
 }
