@@ -495,15 +495,15 @@ export function BasicQuestions(): JSX.Element {
         </Button><p></p></div>:null}
         {reportMode === true ? <div className="container">
     <div className="column">
-        <h1>Job #1</h1>
+        <h1>Career #1</h1>
         <h2>{res[0]}</h2>
     </div>
     <div className="column">
-        <h1>Job #2</h1>
+        <h1>Career #2</h1>
         <h2>{res[1]}</h2>
     </div>
     <div className="column">
-        <h1>Job #3</h1>
+        <h1>Career #3</h1>
         <h2>{res[2]}</h2>
     </div>
 </div>

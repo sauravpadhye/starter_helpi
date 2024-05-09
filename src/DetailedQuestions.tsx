@@ -295,6 +295,18 @@ export function DetailedQuestions(): JSX.Element {
         {(progressVal > .995) && (reportMode === false) ? <div>
             <Button onClick = {()=> handleClick()}>Generate Results
         </Button><p></p></div>:null}
-        {reportMode === true ? <div><h3>{res[0]}</h3><h3>{res[1]}</h3><h3>{res[2]}</h3></div>:null}
+        {reportMode === true ? <div className="container">
+    <div className="column">
+        <h1>Career #1</h1>
+        <h2>{res[0]}</h2>
+    </div>
+    <div className="column">
+        <h1>Career #2</h1>
+        <h2>{res[1]}</h2>
+    </div>
+    <div className="column">
+        <h1>Career #3</h1>
+        <h2>{res[2]}</h2>
+    </div></div>:null}
     </div>
 }
