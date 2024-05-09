@@ -1,0 +1,10 @@
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns with equal width */
+    grid-gap: 10px; /* Adjust the gap between images */
+}
+
+.homeGrid {
+    width: 100%; /* Ensure each image takes up the full width of its column */
+    height: auto; /* Allow the image height to adjust accordingly */
+}
