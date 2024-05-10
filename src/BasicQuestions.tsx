@@ -206,12 +206,12 @@ export function BasicQuestions(): JSX.Element {
     }
     const [progressVal, setProgressVal] = useState<number>(0);
 
-    const [res, setRes] = useState<string[]>([]);
-/*
+    //const [res, setRes] = useState<string[]>([]);
+
     const [res1, setRes1] = useState<string[]>([]);
     const [res2, setRes2] = useState<string[]>([]);
     const [res3, setRes3] = useState<string[]>([]);
-*/
+
     const OpenAI = require("openai");
     const openai = new OpenAI({
         apiKey: keyData,
@@ -229,37 +229,37 @@ export function BasicQuestions(): JSX.Element {
           messages: [{ role: "user", content: `Give me 3 career choices, one sentence description and new line after each description. Preferred work environment is ${optionB1}. Favorite subject is ${optionB2}. Comfort level with computers/technology is ${optionB3}. ${optionB4} to having to travel for work. Strongest character trait is ${optionB5}. Wants to live in a ${optionB6} area. Salary is ${optionB7}.`}],
           max_tokens: 1000
         });
-        setRes(splitString(response.choices[0].message.content));
+        const res = splitString(response.choices[0].message.content);
+        setRes1(splitResults(res[0]));
+        setRes2(splitResults(res[1]));
+        setRes3(splitResults(res[2]));
     }
-    /*
-    async function splitResults(){
-        setRes1(res[0].split(":"))
-        setRes2(res[1].split(":"))
-        setRes3(res[2].split(":"))
+    
+    function splitResults(input: string): string[] {
+        return input.split(":");
     }
-    */
+
 
     function handleClick() {
         sendGPT();
         setReportMode(true);
     }
 
-    function displayResults() { //update this function with columns
-        //splitResults();
+    function displayResults() {
         return (
             <div>
                 <div className="container">
                 <div className="column">
-                    <h1>Career #1</h1>
-                    <h2>{res[0]}</h2>
+                    <h1>{res1[0]}</h1>
+                    <h3>{res1[1]}</h3>
                 </div>
                 <div className="column">
-                    <h1>Career #2</h1>
-                    <h2>{res[1]}</h2>
+                    <h1>{res2[0]}</h1>
+                    <h3>{res2[1]}</h3>
                 </div>
                 <div className="column">
-                    <h1>Career #3</h1>
-                    <h2>{res[2]}</h2>
+                    <h1>{res3[0]}</h1>
+                    <h3>{res3[1]}</h3>
                 </div>
             </div>
             </div>
@@ -521,7 +521,6 @@ export function BasicQuestions(): JSX.Element {
                 />
                 <p></p>
         </div>:null}
-
         {reportMode === false ? <br></br>:null}
         {(progressVal > .995) && (reportMode === false) ? <div>
             <Button className="headerButton" onClick = {()=> handleClick()}>Generate Results
