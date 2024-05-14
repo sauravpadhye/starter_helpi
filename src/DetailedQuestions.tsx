@@ -245,6 +245,7 @@ export function DetailedQuestions(): JSX.Element {
         //splitResults();
         return (
             <div>
+                <h2> If you don't find that these careers match your interests then you can regenerate your results with this feedback in mind! </h2>
                 <div className="container">
                 <div className="column">
                     <h1>Career #1</h1>
@@ -260,7 +261,7 @@ export function DetailedQuestions(): JSX.Element {
                 </div>
             </div>
             <footer>
-                <Button className="headerButton" style={{width:'150px',height:'50px',marginTop: '10px', justifyContent: 'center' }}onClick = {() => sendGPT(res[0], res[1], res[2])}>Regenerate Results</Button>
+                <Button className="headerButton" style={{width:'150px',height:'50px',marginTop: '100px', justifyContent: 'center' }}onClick = {() => sendGPT(res[0], res[1], res[2])}>Regenerate Results</Button>
             </footer>
             </div>
         )
