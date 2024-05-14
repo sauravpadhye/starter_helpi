@@ -258,6 +258,7 @@ export function BasicQuestions(): JSX.Element {
         //splitResults();
         return (
             <div>
+                <h2> If you don't find that these careers match your interests then you can regenerate your results with this feedback in mind. </h2>
                 <div className="container">
                 <div className="column">
                     <h1>Career #1</h1>
@@ -272,9 +273,9 @@ export function BasicQuestions(): JSX.Element {
                     <h2>{res[2]}</h2>
                 </div>
             </div>
-            <footer>
-                <Button className="headerButton" style={{width:'150px',height:'50px',marginTop: '10px', justifyContent: 'center' }}onClick = {() => sendGPT(res[0], res[1], res[2])}>Regenerate Results</Button>
-            </footer>
+            <div>
+                <Button className="headerButton" style={{width:'150px',height:'50px', justifyContent: 'center', marginTop: '100px'}}onClick = {() => sendGPT(res[0], res[1], res[2])}>Regenerate Results</Button>
+            </div>
             </div>
         )
     }
