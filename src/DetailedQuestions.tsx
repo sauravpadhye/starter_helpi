@@ -220,10 +220,10 @@ export function DetailedQuestions(): JSX.Element {
         return input.split(regex);
     }
 
-    async function sendGPT() {
+    async function sendGPT(resp1: string, resp2: string, resp3: string) {
         const response = await openai.chat.completions.create({
           model: "gpt-4",
-          messages: [{ role: "user", content: `Give me 3 career choices, one sentence description. The following are results from a career survey quiz. Q: you consider yourself an introvert or an extrovert? A: ${Q1Answer}. Q: Does remote or in-person work sound more appealing? A: ${Q2Answer}. Q: Does the societal view of your line of work matter? A: ${Q3Answer}. Q: Are you preferential to urban or rural settings? A: ${Q4Answer}. Q: Does traveling for work sound desirable? A: ${Q5Answer}. Q: Do/Did you like school? What part, or parts, were your favorite? A: ${Q6Answer}. Q: How appealing does a desk-job sound? A: ${Q7Answer}.`}],
+          messages: [{ role: "user", content: `Give me 3 career choices, one sentence description. The following are results from a career survey quiz. Q: you consider yourself an introvert or an extrovert? A: ${Q1Answer}. Q: Does remote or in-person work sound more appealing? A: ${Q2Answer}. Q: Does the societal view of your line of work matter? A: ${Q3Answer}. Q: Are you preferential to urban or rural settings? A: ${Q4Answer}. Q: Does traveling for work sound desirable? A: ${Q5Answer}. Q: Do/Did you like school? What part, or parts, were your favorite? A: ${Q6Answer}. Q: How appealing does a desk-job sound? A: ${Q7Answer}. In past career surveys I didn't like these options ${resp1}, ${resp2}, ${resp2}.`}],
           max_tokens: 1000
         });
         setRes(splitString(response.choices[0].message.content));
@@ -237,7 +237,7 @@ export function DetailedQuestions(): JSX.Element {
     */
 
     function handleClick() {
-        sendGPT();
+        sendGPT("", "", "");
         setReportMode(true);
     }
 
@@ -259,6 +259,9 @@ export function DetailedQuestions(): JSX.Element {
                     <h2>{res[2]}</h2>
                 </div>
             </div>
+            <footer>
+                <Button className="headerButton" style={{width:'150px',height:'50px',marginTop: '10px', justifyContent: 'center' }}onClick = {() => sendGPT(res[0], res[1], res[2])}>Regenerate Results</Button>
+            </footer>
             </div>
         )
     }
