@@ -206,13 +206,12 @@ export function BasicQuestions(): JSX.Element {
     }
     const [progressVal, setProgressVal] = useState<number>(0);
 
-    const [res, setRes] = useState<string[]>([]);
+    //const [res, setRes] = useState<string[]>([]);
 
-/*
     const [res1, setRes1] = useState<string[]>([]);
     const [res2, setRes2] = useState<string[]>([]);
     const [res3, setRes3] = useState<string[]>([]);
-*/
+
     const OpenAI = require("openai");
     const openai = new OpenAI({
         apiKey: keyData,
@@ -224,57 +223,47 @@ export function BasicQuestions(): JSX.Element {
         return input.split(regex);
     }
 
+    function splitResults(input: string): string[] {
+        return input.split(":");
+    }
+
     async function sendGPT(resp1: string, resp2: string, resp3: string) {
-        const response = await openai.chat.completions.create({
+        var response = await openai.chat.completions.create({
           model: "gpt-4",
           messages: [{ role: "user", content: `Give me 3 career choices, one sentence description and new line after each description. Preferred work environment is ${optionB1}. Favorite subject is ${optionB2}. Comfort level with computers/technology is ${optionB3}. ${optionB4} to having to travel for work. Strongest character trait is ${optionB5}. Wants to live in a ${optionB6} area. Salary is ${optionB7}. In past career surveys I didn't like these options ${resp1}, ${resp2}, ${resp2}.`}],
           max_tokens: 1000
         });
-        setRes(splitString(response.choices[0].message.content));
+        var res: string[] = splitString(response.choices[0].message.content);
+        setRes1(splitResults(res[0]));
+        setRes2(splitResults(res[1]));
+        setRes3(splitResults(res[2]));
     }
-    /*
-    async function splitResults(){
-        setRes1(res[0].split(":"))
-        setRes2(res[1].split(":"))
-        setRes3(res[2].split(":"))
-    }
-    */
 
     function handleClick() {
         sendGPT("", "", "");
         setReportMode(true);
     }
-    /*
-    async function reSendGPT(cNumber: number, oldRes: string) {
-        const response = await openai.chat.completions.create({
-            model: "gpt-4",
-            messages: [{role: "user", content: `Give me a career choice, one sentence description and new line after each description. Preferred work environment is ${optionB1}. Favorite subject is ${optionB2}. Comfort level with computers/technology is ${optionB3}. ${optionB4} to having to travel for work. Strongest character trait is ${optionB5}. Wants to live in a ${optionB6} area. Salary is ${optionB7}. This is not a desired career ${oldRes}`}],
-            max_tokens: 1000
-          });
-          setRegenerateFlag(false);   
-    }
-    */
-    function displayResults() { //update this function with columns
-        //splitResults();
+
+    function displayResults() {
         return (
             <div>
                 <h2> If you don't find that these careers match your interests then you can regenerate your results with this feedback in mind. </h2>
                 <div className="container">
                 <div className="column">
-                    <h1>Career #1</h1>
-                    <h2>{res[0]}</h2>
+                    <h1>{res1[0]}</h1>
+                    <h2>{res1[1]}</h2>
                 </div>
                 <div className="column">
-                    <h1>Career #2</h1>
-                    <h2>{res[1]}</h2>
+                    <h1>{res2[0]}</h1>
+                    <h2>{res2[1]}</h2>
                 </div>
                 <div className="column">
-                    <h1>Career #3</h1>
-                    <h2>{res[2]}</h2>
+                    <h1>{res3[0]}</h1>
+                    <h2>{res3[1]}</h2>
                 </div>
             </div>
             <div>
-                <Button className="headerButton" style={{width:'150px',height:'50px', justifyContent: 'center', marginTop: '100px'}}onClick = {() => sendGPT(res[0], res[1], res[2])}>Regenerate Results</Button>
+                <Button className="headerButton" style={{width:'150px',height:'50px', justifyContent: 'center', marginTop: '100px'}}onClick = {() => sendGPT(res1[0], res2[0], res3[0])}>Regenerate Results</Button>
             </div>
             </div>
         )
